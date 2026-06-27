@@ -11,6 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <Fragment slot="footer-name">Kiribas</Fragment>
 
   <section class="hero">
+    <img src="/images/logo.webp" alt="Logo" class="hero-logo" width="200" height="auto" />
     <h1>Kiribas</h1>
     <p class="tagline">基里巴斯离岸公司注册与许可</p>
     <p>税收优惠的IBC注册和KIFA监管许可</p>
@@ -58,6 +59,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .hero-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
   .tagline {
     font-size: 1.4rem;
     font-weight: 600;
