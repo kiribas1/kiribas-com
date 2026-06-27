@@ -32,11 +32,12 @@ const langNames: Record<string, string> = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#0b0c10" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kiribas Corporate Register" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -54,7 +55,22 @@ const langNames: Record<string, string> = {
     })}
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en/`} />
 
-    <!-- Google AdSense - replace ca-pub-XXXXXXX with your real ID -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome 7 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google AdSense -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2701690512336282"
@@ -62,83 +78,279 @@ const langNames: Record<string, string> = {
     ></script>
 
     <style is:global>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      :root {
+        --kb-bg:        #070c18;
+        --kb-surface:   #0d1524;
+        --kb-surface2:  #111d30;
+        --kb-border:    rgba(255,255,255,.08);
+        --kb-border-hi: rgba(255,255,255,.15);
+        --kb-gold:      #e5b84a;
+        --kb-gold-dim:  rgba(229,184,74,.12);
+        --kb-text:      rgba(255,255,255,.88);
+        --kb-muted:     rgba(255,255,255,.52);
+        --kb-navy:      #06111e;
       }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        line-height: 1.6;
-        color: #1a1a2e;
-        background: #fafafa;
-      }
-      a {
-        color: #0066cc;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      header {
-        background: #1a1a2e;
-        color: white;
-        padding: 16px 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      header .container {
+        background: var(--kb-bg);
+        color: var(--kb-text);
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      h1, h2, h3, h4, h5, h6 { color: #fff; }
+      strong, b { color: inherit; }
+      .text-muted { color: var(--kb-muted) !important; }
+      hr { border-color: var(--kb-border); opacity: 1; }
+      a { color: var(--kb-gold); }
+      a:hover { color: #f0c75a; text-decoration: none; }
+
+      /* Navbar */
+      .navbar-navy {
+        background: var(--kb-navy);
+        border-bottom: 1px solid rgba(229,184,74,.20) !important;
+      }
+      .brand-subtitle { font-size: .78rem; letter-spacing: .05em; text-transform: uppercase; }
+      .nav-link.link-light { color: rgba(255,255,255,.70) !important; transition: color .15s; }
+      .nav-link.link-light:hover { color: var(--kb-gold) !important; }
+      .navbar-toggler { border-color: rgba(255,255,255,.25); }
+      .navbar-toggler-icon { filter: invert(1); }
+
+      /* Cards */
+      .card {
+        background: var(--kb-surface) !important;
+        border: 1px solid var(--kb-border) !important;
+        color: var(--kb-text);
+      }
+      .bg-light, .bg-white {
+        background: var(--kb-surface2) !important;
+      }
+
+      /* Service cards */
+      .service-card {
+        border: 1px solid var(--kb-border) !important;
+        border-radius: 1.25rem;
+        background: var(--kb-surface) !important;
+        box-shadow: 0 4px 28px rgba(0,0,0,.45) !important;
+        height: 100%;
+        transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+      }
+      .service-card:hover {
+        border-color: rgba(229,184,74,.30) !important;
+        box-shadow: 0 8px 40px rgba(229,184,74,.10) !important;
+        transform: translateY(-3px);
+      }
+
+      /* Hero */
+      .agent-hero {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        background: linear-gradient(135deg, #081a14 0%, #0b2420 100%);
+        border: 1px solid rgba(229,184,74,.15);
+      }
+      .agent-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/images/hero.webp") center/cover no-repeat;
+        opacity: 0.22;
+        pointer-events: none;
+      }
+      .hero-content { position: relative; z-index: 2; }
+
+      /* Hero sidebar card */
+      .hero-side-card {
+        background: rgba(8,16,30,.85) !important;
+        border: 1px solid rgba(229,184,74,.20) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      /* Crypto bar */
+      .crypto-bar {
+        background: rgba(255,255,255,.05);
+        backdrop-filter: blur(8px);
+        border-radius: 60px;
+        padding: .75rem 1.5rem;
+        display: inline-flex;
+        flex-wrap: wrap;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
+        justify-content: center;
+        gap: 1.5rem;
+        border: 1px solid rgba(255,255,255,.12);
       }
-      .logo {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: white;
+      .crypto-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .9rem;
+        font-weight: 500;
+        color: var(--kb-gold);
       }
-      .logo:hover {
-        text-decoration: none;
+      .crypto-icon img { width: 28px; height: 28px; }
+
+      /* Trust badges */
+      .trust-badge {
+        background: rgba(229,184,74,.13);
+        color: var(--kb-gold);
+        border: 1px solid rgba(229,184,74,.28);
+        border-radius: 40px;
+        padding: .35rem 1rem;
+        font-size: .8rem;
+        font-weight: 600;
       }
-      nav {
+
+      /* Service icon */
+      .service-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #e5b84a, #c4903a);
+        color: #07100c;
+        font-size: 1.75rem;
+        flex-shrink: 0;
+      }
+
+      /* Inline badges */
+      .badge-org {
+        background: rgba(229,184,74,.15);
+        color: var(--kb-gold);
+        border: 1px solid rgba(229,184,74,.25);
+        font-size: .7rem;
+        padding: .25rem .75rem;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+      .badge-kifa {
+        background: rgba(96,165,250,.15);
+        color: #7ec8fb;
+        border: 1px solid rgba(96,165,250,.25);
+        font-size: .7rem;
+        padding: .25rem .75rem;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+
+      /* Dual service */
+      .dual-service {
+        background: var(--kb-surface2);
+        border: 1px solid var(--kb-border);
+        border-radius: 1.5rem;
+        padding: 2rem;
+      }
+
+      /* Section stripe */
+      .section-stripe {
+        background: var(--kb-surface2);
+        border-radius: 1.5rem;
+        padding: 3rem 2rem;
+        border: 1px solid var(--kb-border);
+      }
+
+      /* How it works */
+      .step-circle {
+        width: 52px;
+        height: 52px;
+        background: linear-gradient(135deg, #e5b84a, #c4903a);
+        color: #07100c;
+        border-radius: 60px;
         display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.25rem;
+        margin: 0 auto 1rem auto;
+        box-shadow: 0 4px 16px rgba(229,184,74,.30);
       }
-      nav a {
-        color: #ccc;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-size: 0.85rem;
-      }
-      nav a:hover,
-      nav a.active {
+
+      /* CTA */
+      .cta-section {
+        background: linear-gradient(135deg, #0b1f3a 0%, #091729 100%);
+        border-radius: 1.5rem;
+        border: 1px solid rgba(229,184,74,.18);
         color: white;
-        background: rgba(255, 255, 255, 0.1);
-        text-decoration: none;
       }
-      main {
-        min-height: 70vh;
-        padding: 40px 0;
+
+      /* Fee box */
+      .fee-box {
+        background: linear-gradient(135deg, #091728 0%, #0e1e35 100%);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(229,184,74,.18);
+        border-left: 3px solid var(--kb-gold);
       }
-      footer {
-        background: #1a1a2e;
-        color: #999;
-        padding: 24px 0;
-        text-align: center;
-        font-size: 0.85rem;
+
+      /* FAQ cards */
+      .faq-card {
+        background: var(--kb-surface);
+        border: 1px solid var(--kb-border);
+        border-radius: 1rem;
+        padding: 1.25rem;
+        transition: border-color .2s ease;
+        height: 100%;
       }
+      .faq-card:hover { border-color: rgba(229,184,74,.25); }
+      .faq-card strong { color: #fff; }
+
+      /* Buttons */
+      .btn-warning, .btn-warning:focus {
+        background: linear-gradient(135deg, #e5b84a, #c4903a) !important;
+        border: none !important;
+        color: #07100c !important;
+        font-weight: 600;
+      }
+      .btn-warning:hover {
+        background: linear-gradient(135deg, #f0c75a, #d4a840) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 18px rgba(229,184,74,.35) !important;
+      }
+      .btn-outline-warning {
+        border-color: rgba(229,184,74,.45) !important;
+        color: var(--kb-gold) !important;
+        background: transparent !important;
+      }
+      .btn-outline-warning:hover {
+        background: rgba(229,184,74,.10) !important;
+        border-color: var(--kb-gold) !important;
+      }
+      .btn-outline-light { border-color: rgba(255,255,255,.35) !important; }
+      .btn-outline-light:hover {
+        background: rgba(255,255,255,.08) !important;
+        color: #fff !important;
+      }
+      .btn-light {
+        background: #fff !important;
+        color: #070c18 !important;
+        font-weight: 600;
+      }
+      .btn-light:hover {
+        background: var(--kb-gold) !important;
+        color: #07100c !important;
+      }
+
+      /* Footer */
+      footer.navbar-navy { border-top: 1px solid rgba(229,184,74,.15); }
+      .link-light-50 { color: rgba(255,255,255,.58) !important; transition: color .15s ease; }
+      .link-light-50:hover { color: var(--kb-gold) !important; }
+
+      /* Utility */
+      .text-white-75 { color: rgba(255,255,255,.75); }
+      .text-warning { color: var(--kb-gold) !important; }
+      .bg-warning { background: var(--kb-gold) !important; }
+
+      /* Ad slot */
       .ad-slot {
-        background: #f0f0f0;
-        border: 1px dashed #ccc;
+        background: rgba(255,255,255,.03);
+        border: 1px dashed rgba(255,255,255,.12);
         padding: 20px;
         text-align: center;
         margin: 24px 0;
@@ -146,87 +358,172 @@ const langNames: Record<string, string> = {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #999;
+        color: rgba(255,255,255,.3);
         font-size: 0.8rem;
-      }
-      .hero {
-        text-align: center;
-        padding: 60px 20px;
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-        color: white;
-        border-radius: 12px;
-        margin-bottom: 40px;
-      }
-      .hero h1 {
-        font-size: 2.4rem;
-        margin-bottom: 16px;
-      }
-      .hero p {
-        font-size: 1.15rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 24px;
-        margin: 32px 0;
-      }
-      .card {
-        background: white;
         border-radius: 8px;
-        padding: 24px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        transition: transform 0.2s;
       }
-      .card:hover {
-        transform: translateY(-2px);
+
+      /* Lang switcher in navbar */
+      .lang-switcher {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
       }
-      .card h2 {
-        font-size: 1.3rem;
-        margin-bottom: 8px;
-        color: #1a1a2e;
+      .lang-switcher a {
+        color: rgba(255,255,255,.55);
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: .78rem;
+        text-decoration: none;
+        transition: all .15s;
+        border: 1px solid transparent;
       }
-      .card p {
-        color: #555;
-        font-size: 0.95rem;
+      .lang-switcher a:hover {
+        color: var(--kb-gold);
+        border-color: rgba(229,184,74,.3);
       }
-      @media (max-width: 640px) {
-        .hero h1 {
-          font-size: 1.6rem;
-        }
-        .card-grid {
-          grid-template-columns: 1fr;
-        }
+      .lang-switcher a.active {
+        color: var(--kb-gold);
+        background: rgba(229,184,74,.12);
+        border-color: rgba(229,184,74,.25);
       }
     </style>
   </head>
-  <body>
-    <header>
+  <body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-navy py-3" aria-label="Main navbar">
       <div class="container">
-        <a class="logo" href={`/${lang}/`}><slot name="logo">Site</slot></a>
-        <nav>
-          {locales.map((loc) => {
-            const path = currentPath.replace(`/${lang}/`, `/${loc}/`);
-            return (
-              <a href={path} class={loc === lang ? 'active' : ''}>
-                {langNames[loc]}
-              </a>
-            );
-          })}
-        </nav>
+        <a class="navbar-brand d-flex align-items-center gap-2 text-white text-decoration-none" href={`/${lang}/`}>
+          <img
+            src="/images/logo.webp"
+            alt="Kiribas"
+            width="52"
+            height="52"
+            class="rounded-3"
+          />
+          <span class="d-flex flex-column lh-1">
+            <span class="fw-bold fs-5 text-white">Kiribas</span>
+            <span class="brand-subtitle text-white opacity-50">Corporate Register</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+          aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+            <li class="nav-item ms-lg-3">
+              <div class="lang-switcher d-flex align-items-center">
+                {locales.map((loc) => {
+                  const path = currentPath.replace(`/${lang}/`, `/${loc}/`);
+                  return (
+                    <a href={path} class={loc === lang ? 'active' : ''}>
+                      {langNames[loc]}
+                    </a>
+                  );
+                })}
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>
-    <main>
-      <div class="container">
-        <slot />
-      </div>
+    </nav>
+
+    <main class="flex-fill">
+      <slot />
     </main>
-    <footer>
-      <div class="container">
-        <p>&copy; {new Date().getFullYear()} <slot name="footer-name">Site</slot>. All rights reserved.</p>
+
+    <footer class="mt-auto navbar-navy text-light">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-12 col-lg-4">
+            <a href={`/${lang}/`} class="d-flex align-items-center gap-2 text-decoration-none mb-3">
+              <img src="/images/logo.webp" alt="Kiribas" width="40" height="40" class="rounded-3" />
+              <span class="fw-bold text-white fs-6">Kiribas Corporate Register</span>
+            </a>
+            <p style="color:rgba(255,255,255,.52);font-size:.875rem;line-height:1.65;">
+              <slot name="footer-desc">Authorized Agent for offshore company formation (IBC) and KIFA licensing in Kiribati. Flat annual structure -- $6,000/year.</slot>
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+              <a href="https://kiribas.net/" target="_blank" rel="noopener"
+                 style="font-size:.75rem;padding:.25rem .75rem;border-radius:20px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.60);text-decoration:none;">
+                kiribas.net &mdash; Registry
+              </a>
+              <a href="https://kiribas.org/" target="_blank" rel="noopener"
+                 style="font-size:.75rem;padding:.25rem .75rem;border-radius:20px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.60);text-decoration:none;">
+                kiribas.org &mdash; KIFA
+              </a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div style="color:rgba(255,255,255,.35);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">
+              <slot name="footer-services-title">Services</slot>
+            </div>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href={`/${lang}/`} class="link-light-50 text-decoration-none"><slot name="footer-s1">IBC Formation</slot></a></li>
+              <li class="mb-2"><a href={`/${lang}/`} class="link-light-50 text-decoration-none"><slot name="footer-s2">KIFA Licensing</slot></a></li>
+              <li class="mb-2"><a href={`/${lang}/`} class="link-light-50 text-decoration-none"><slot name="footer-s3">Combined Package</slot></a></li>
+              <li class="mb-2"><a href={`/${lang}/`} class="link-light-50 text-decoration-none"><slot name="footer-s4">Annual Compliance</slot></a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div style="color:rgba(255,255,255,.35);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">
+              <slot name="footer-company-title">Company</slot>
+            </div>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="https://kiribas.org/" target="_blank" rel="noopener" class="link-light-50 text-decoration-none">KIFA Authority</a></li>
+              <li class="mb-2"><a href="https://kiribas.net/" target="_blank" rel="noopener" class="link-light-50 text-decoration-none">Registry</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div style="color:rgba(255,255,255,.35);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">
+              <slot name="footer-contact-title">Contact</slot>
+            </div>
+            <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.25rem;">
+              <div style="color:rgba(255,255,255,.55);font-size:.875rem;margin-bottom:.5rem;">
+                Email: <span id="email" style="color:rgba(255,255,255,.80);"></span>
+              </div>
+              <div style="color:rgba(255,255,255,.55);font-size:.875rem;margin-bottom:1rem;">
+                Tel: +37022665869
+              </div>
+            </div>
+
+            <div style="margin-top:1rem;padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);">
+              <div style="color:rgba(255,255,255,.40);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;">
+                <slot name="footer-why-title">Why "Kiribas"</slot>
+              </div>
+              <p style="color:rgba(255,255,255,.45);font-size:.8rem;line-height:1.55;margin:0;">
+                <slot name="footer-why-text">Reflects the local pronunciation of Kiribati -- the same name spoken as it is commonly pronounced in the Gilbertese language.</slot>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,.07);">
+        <div class="container py-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <small style="color:rgba(255,255,255,.35);">
+            &copy; {new Date().getFullYear()} Kiribati Corporate Register &middot; Gerom str, 22108 London (KI)
+          </small>
+          <small style="color:rgba(255,255,255,.25);">
+            <slot name="footer-disclaimer">Not an official government body. Authorized Agent services only.</slot>
+          </small>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const el = document.getElementById("email");
+          if (el) el.textContent = "info" + "@" + "kiribas.com";
+        })();
+      </script>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

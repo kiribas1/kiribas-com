@@ -3,94 +3,406 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Kiribas | Constitución de Empresas Offshore y Licencias en Kiribati"
-  description="Registro de IBC con ventajas fiscales y licencias regulatorias KIFA en la República de Kiribati. Constitución de empresas offshore, licencias bancarias, de juegos, cripto, FX y seguros."
+  title="Constitución de Empresas Offshore y Licencias en Kiribati | Agente Autorizado | IBC con Ventajas Fiscales"
+  description="Agente Autorizado para el registro de empresas offshore en Kiribati (IBC) y licencias KIFA. Cero impuesto corporativo – tarifa fija de $6,000/año. Gestionamos incorporación, banca, juegos, cripto, FX. Pagos en criptomonedas aceptados."
   lang="es"
+  ogImage="/images/logo.webp"
 >
-  <Fragment slot="logo">Kiribas</Fragment>
-  <Fragment slot="footer-name">Kiribas</Fragment>
+  <Fragment slot="footer-desc">Agente Autorizado para constitución de empresas offshore (IBC) y licencias KIFA en Kiribati. Estructura anual fija — $6,000/año.</Fragment>
+  <Fragment slot="footer-disclaimer">No es un organismo gubernamental oficial. Solo servicios de Agente Autorizado.</Fragment>
+  <Fragment slot="footer-services-title">Servicios</Fragment>
+  <Fragment slot="footer-s1">Constitución IBC</Fragment>
+  <Fragment slot="footer-s2">Licencias KIFA</Fragment>
+  <Fragment slot="footer-s3">Paquete Combinado</Fragment>
+  <Fragment slot="footer-s4">Cumplimiento Anual</Fragment>
+  <Fragment slot="footer-company-title">Empresa</Fragment>
+  <Fragment slot="footer-contact-title">Contacto</Fragment>
+  <Fragment slot="footer-why-title">¿Por qué "Kiribas"?</Fragment>
+  <Fragment slot="footer-why-text">Refleja la pronunciación local de Kiribati — el mismo nombre tal como se pronuncia comúnmente en el idioma gilbertés.</Fragment>
 
-  <section class="hero">
-    <img src="/images/logo.webp" alt="Logo" class="hero-logo" width="200" height="auto" />
-    <h1>Kiribas</h1>
-    <p class="tagline">Constitución de Empresas Offshore y Licencias en Kiribati</p>
-    <p>Registro de IBC con Ventajas Fiscales y Licencias Regulatorias KIFA</p>
-  </section>
+  <div class="content-home pb-5">
+    <div class="container-xl">
 
-  <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
+      <!-- HERO -->
+      <section class="agent-hero p-4 p-lg-5 mt-4 mb-4">
+        <div class="hero-content">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="trust-badge"><i class="fa-solid fa-user-check me-1"></i> Agente Autorizado</span>
+                <span class="trust-badge"><i class="fa-solid fa-building me-1"></i> kiribas.net (Registro)</span>
+                <span class="trust-badge"><i class="fa-solid fa-scale-balanced me-1"></i> kiribas.org (KIFA)</span>
+              </div>
 
-  <div class="card-grid">
-    <article class="card">
-      <h2>Incorporación IBC</h2>
-      <p>Incorporación de IBC offshore a través de kiribas.net. Preparación integral de documentos incluyendo solicitudes de incorporación, memorándum y estatutos, listas de verificación de cumplimiento.</p>
-    </article>
-    <article class="card">
-      <h2>Licencias KIFA</h2>
-      <p>Licencias regulatorias para banca, juegos, cripto, FX y seguros a través de la Autoridad Financiera Internacional de Kiribati.</p>
-    </article>
-    <article class="card">
-      <h2>Paquetes Combinados</h2>
-      <p>Registro dual que gestiona tanto la incorporación IBC como las licencias KIFA simultáneamente con un único punto de contacto.</p>
-    </article>
-    <article class="card">
-      <h2>Precios</h2>
-      <p>$6,000 USD por año de impuesto fijo sobre ganancias. Sin impuesto sobre la renta corporativa, impuesto sobre ganancias de capital ni retenciones fiscales. Prorrateo para incorporaciones a mitad de año.</p>
-    </article>
-    <article class="card">
-      <h2>Proceso</h2>
-      <p>Consulta inicial, evaluación personalizada, preparación de documentos, presentación y seguimiento. Plazo típico de 2 a 6 semanas con gestión de cuenta dedicada.</p>
-    </article>
-    <article class="card">
-      <h2>Pagos en Cripto</h2>
-      <p>Acepta BTC, ETH, SOL, USDC y USDT. Se prefieren stablecoins.</p>
-    </article>
+              <h1 class="display-5 fw-bold mb-3 text-white">
+                Constitución de Empresas Offshore y Licencias en Kiribati &ndash; <span style="color: #f59e0b;">IBC con Ventajas Fiscales</span>
+              </h1>
+
+              <p class="lead mb-3 text-white-75">
+                Somos su único punto de contacto para la <strong>constitución de empresas offshore (IBC)</strong>
+                Y <strong>licencias KIFA</strong> (banca, juegos, cripto, FX, seguros).
+                Impuesto anual fijo de <strong class="text-warning">$6,000 USD</strong> &ndash; sin otros impuestos sobre ingresos extranjeros.
+              </p>
+
+              <p class="mb-4 text-white-75">
+                Usted se enfoca en su negocio. Nosotros preparamos toda la documentación, presentamos ante <strong>kiribas.net</strong> (Registro de Empresas)
+                y <strong>kiribas.org</strong> (KIFA), hacemos seguimiento y entregamos su empresa + licencia lista para usar.
+              </p>
+
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a class="btn btn-warning btn-lg px-4 fw-semibold" href="/es/" style="background: #f59e0b; border: none;">
+                  <i class="fa-solid fa-rocket me-2"></i> Inicie su proyecto offshore (2 min)
+                </a>
+                <a class="btn btn-outline-light btn-lg px-4" href="#services">
+                  <i class="fa-solid fa-circle-info me-2"></i> Nuestros servicios
+                </a>
+              </div>
+
+              <!-- Crypto bar -->
+              <div class="crypto-bar">
+                <span class="text-white-75 small me-2">Aceptamos:</span>
+                <span class="crypto-icon"><img src="/images/crypto/bitcoin.webp" alt="BTC" /> BTC</span>
+                <span class="crypto-icon"><img src="/images/crypto/ethereum.webp" alt="ETH" /> ETH</span>
+                <span class="crypto-icon"><img src="/images/crypto/solana.webp" alt="SOL" /> SOL</span>
+                <span class="crypto-icon"><img src="/images/crypto/usdc.webp" alt="USDC" /> USDC</span>
+                <span class="crypto-icon"><img src="/images/crypto/usdt.webp" alt="USDT" /> USDT</span>
+                <span class="text-white-75 small ms-2">&mdash; Se prefieren stablecoins</span>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="card hero-side-card rounded-4 p-4">
+                <div class="text-center mb-3">
+                  <img src="/images/logo.webp" alt="Kiribas Agent - Agente Autorizado para Constitución de Empresas Offshore" width="70" height="70" class="rounded-4" />
+                </div>
+                <h3 class="h5 fw-bold text-center mb-3">Lo que entregamos</h3>
+                <div class="d-flex flex-column gap-2">
+                  <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-check-circle text-warning"></i> <span>Incorporación IBC offshore (kiribas.net)</span></div>
+                  <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-check-circle text-warning"></i> <span>Licencia comercial (si es necesaria)</span></div>
+                  <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-check-circle text-warning"></i> <span>Licencia KIFA (banca/juegos/cripto/FX/seguros)</span></div>
+                  <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-check-circle text-warning"></i> <span>Toda la documentación preparada por nosotros</span></div>
+                  <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-check-circle text-warning"></i> <span>Presentación + seguimiento incluidos</span></div>
+                </div>
+                <hr class="my-3" />
+                <div class="small text-muted text-center">
+                  <i class="fa-regular fa-clock"></i> Plazo típico: 2&ndash;6 semanas<br />
+                  <i class="fa-solid fa-headset"></i> Gestor de cuenta dedicado
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
+
+      <!-- SERVICES -->
+      <section id="services" class="py-4">
+        <div class="text-center mb-5">
+          <span class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 rounded-pill mb-2">Dos autoridades, un agente</span>
+          <h2 class="display-6 fw-bold mb-3">Gestionamos <span style="color: #f59e0b;">constitución offshore + licencias</span> de principio a fin</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px;">
+            Ya sea que necesite un IBC, una licencia KIFA, o ambos &ndash; gestionamos todo el proceso.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="service-card p-4">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+                <div>
+                  <span class="badge-org mb-1 d-inline-block">kiribas.net &mdash; Registro</span>
+                  <h3 class="h4 fw-bold mt-2 mb-2">Registro IBC Offshore</h3>
+                  <p class="text-muted">Incorpore su Empresa Comercial Internacional (IBC) en Kiribati &ndash; una jurisdicción con ventajas fiscales y tarifa anual fija.</p>
+                </div>
+              </div>
+              <ul class="list-unstyled text-muted mb-3">
+                <li class="mb-2"><i class="fa-solid fa-file-pdf text-warning me-2"></i> Preparación de documentos de incorporación</li>
+                <li class="mb-2"><i class="fa-solid fa-pen-ruler text-warning me-2"></i> Memorándum y Estatutos</li>
+                <li class="mb-2"><i class="fa-solid fa-user-check text-warning me-2"></i> Nombramientos de directores y accionistas</li>
+                <li class="mb-2"><i class="fa-solid fa-dollar-sign text-warning me-2"></i> Gestión de tarifa anual ($6,000/año fijo)</li>
+                <li class="mb-2"><i class="fa-solid fa-certificate text-warning me-2"></i> Certificado de Incorporación</li>
+              </ul>
+              <div class="mt-auto">
+                <a href="/es/" class="btn btn-outline-warning w-100">Solicitar constitución offshore &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="service-card p-4">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div>
+                  <span class="badge-kifa mb-1 d-inline-block">kiribas.org &mdash; KIFA</span>
+                  <h3 class="h4 fw-bold mt-2 mb-2">Licencias Regulatorias</h3>
+                  <p class="text-muted">Obtenga licencias para actividades financieras reguladas bajo el marco KIFA.</p>
+                </div>
+              </div>
+              <ul class="list-unstyled text-muted mb-3">
+                <li class="mb-2"><i class="fa-solid fa-building-columns text-warning me-2"></i> Licencia bancaria</li>
+                <li class="mb-2"><i class="fa-solid fa-dice text-warning me-2"></i> Licencia de juegos / apuestas</li>
+                <li class="mb-2"><i class="fa-brands fa-bitcoin text-warning me-2"></i> Licencia cripto / VASP</li>
+                <li class="mb-2"><i class="fa-solid fa-chart-line text-warning me-2"></i> Licencia de corretaje / FX</li>
+                <li class="mb-2"><i class="fa-solid fa-shield-halved text-warning me-2"></i> Licencia de seguros / fideicomisos</li>
+                <li class="mb-2"><i class="fa-solid fa-briefcase text-warning me-2"></i> Licencia comercial</li>
+              </ul>
+              <div class="mt-auto">
+                <a href="/es/" class="btn btn-outline-warning w-100">Solicitar soporte de licencias &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMBINED PACKAGE -->
+      <section class="py-4">
+        <div class="dual-service">
+          <div class="row align-items-center g-4">
+            <div class="col-md-8">
+              <div class="d-flex align-items-center gap-3 mb-2 flex-wrap">
+                <span class="badge bg-dark text-warning px-3 py-2 rounded-pill"><i class="fa-regular fa-gem me-1"></i> Más popular</span>
+                <span class="small text-muted">&mdash; Ahorre tiempo y dinero</span>
+              </div>
+              <h3 class="h3 fw-bold mb-3">IBC Offshore + Licencia KIFA &mdash; Paquete Completo</h3>
+              <p class="mb-3">
+                ¿Necesita tanto la <strong>constitución de empresa offshore</strong> <strong>COMO</strong> una <strong>licencia regulatoria</strong>? Coordinamos todo con ambas autoridades
+                (kiribas.net y kiribas.org). Sin trabajo duplicado, sin confusión.
+              </p>
+              <ul class="row g-2 mb-0">
+                <li class="col-md-6"><i class="fa-regular fa-circle-check text-warning me-2"></i> Único punto de contacto</li>
+                <li class="col-md-6"><i class="fa-regular fa-circle-check text-warning me-2"></i> Paquete de documentación coherente</li>
+                <li class="col-md-6"><i class="fa-regular fa-circle-check text-warning me-2"></i> Procesamiento más rápido</li>
+                <li class="col-md-6"><i class="fa-regular fa-circle-check text-warning me-2"></i> Tarifa combinada con descuento</li>
+              </ul>
+            </div>
+            <div class="col-md-4 text-center">
+              <a href="/es/" class="btn btn-warning btn-lg px-4 fw-semibold" style="background: #f59e0b; border: none;">
+                <i class="fa-solid fa-gem me-2"></i> Obtener ambos
+              </a>
+              <div class="small text-muted mt-2">Cuéntenos su modelo &rarr; le cotizamos</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="py-5">
+        <div class="section-stripe">
+          <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold mb-3">Cómo funciona</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">Simple, transparente, de principio a fin</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-3 text-center">
+              <div class="step-circle">1</div>
+              <h4 class="fw-bold mb-2">Consulta</h4>
+              <p class="text-muted small">Cuéntenos su modelo de negocio, mercados objetivo y necesidades (solo IBC, solo licencia, o ambos).</p>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="step-circle">2</div>
+              <h4 class="fw-bold mb-2">Evaluación</h4>
+              <p class="text-muted small">Analizamos los requisitos y enviamos una lista de verificación personalizada + cotización.</p>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="step-circle">3</div>
+              <h4 class="fw-bold mb-2">Documentación</h4>
+              <p class="text-muted small">Preparamos todos los documentos, formularios y materiales de apoyo.</p>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="step-circle">4</div>
+              <h4 class="fw-bold mb-2">Presentación &rarr; Listo</h4>
+              <p class="text-muted small">Presentamos ante kiribas.net / kiribas.org y hacemos seguimiento hasta la finalización.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOCUMENTATION CARD -->
+      <section class="py-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-light">
+          <div class="card-body p-4 p-lg-5">
+            <div class="row align-items-center">
+              <div class="col-md-7">
+                <h3 class="h4 fw-bold mb-3"><i class="fa-solid fa-file-alt text-warning me-2"></i> Preparamos todo para su empresa offshore</h3>
+                <p class="mb-3">No necesita descifrar formularios, regulaciones ni presentaciones. Nosotros hacemos todo:</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="list-unstyled small">
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Solicitud de incorporación</li>
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Memorándum y Estatutos</li>
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Formularios de consentimiento de directores</li>
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Declaraciones de accionistas</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="list-unstyled small">
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Formularios de solicitud de licencia</li>
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Plan de negocios (plantilla)</li>
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Procedimientos AML/CFT</li>
+                      <li class="mb-2"><i class="fa-regular fa-file-pdf text-warning me-2"></i> Lista de verificación de cumplimiento</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 text-center">
+                <div class="bg-white rounded-4 p-4 shadow-sm">
+                  <i class="fa-regular fa-clock fa-2x text-warning mb-2"></i>
+                  <div class="fw-bold fs-1 text-warning">0</div>
+                  <div class="small text-muted">formularios que descifrar</div>
+                  <hr class="my-2" />
+                  <div class="fw-bold fs-1 text-success">100%</div>
+                  <div class="small text-muted">gestionado por nosotros</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
+
+      <!-- CONSULTING + COMPLIANCE -->
+      <section class="py-4">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+              <i class="fa-solid fa-chalkboard-user fa-2x text-warning mb-3"></i>
+              <h3 class="h5 fw-bold mb-2">Consultoría y Asesoría</h3>
+              <p class="text-muted small mb-3">
+                ¿No está seguro de qué estructura o licencia se adapta a su negocio offshore? Brindamos asesoría estratégica sobre tipo de entidad,
+                alcance de licencia, requisitos de capital y obligaciones de cumplimiento.
+              </p>
+              <ul class="small text-muted mb-0">
+                <li>Evaluación de viabilidad para IBC offshore</li>
+                <li>Recomendación de ruta de licencia (banca, cripto, juegos, etc.)</li>
+                <li>Planificación de capital y depósito de garantía</li>
+                <li>Soporte continuo de cumplimiento</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+              <i class="fa-solid fa-hand-holding-usd fa-2x text-warning mb-3"></i>
+              <h3 class="h5 fw-bold mb-2">Gestión de Cumplimiento Anual</h3>
+              <p class="text-muted small mb-3">
+                Una vez que su empresa offshore y licencia estén activas, le ayudamos a mantenerse en cumplimiento:
+              </p>
+              <ul class="small text-muted mb-0">
+                <li>Presentación de declaración anual (kiribas.net)</li>
+                <li>Notificaciones de cambio de directores/funcionarios</li>
+                <li>Presentaciones de cambio de dirección</li>
+                <li>Informes anuales de cumplimiento KIFA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEE BOX -->
+      <section class="py-3">
+        <div class="fee-box">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4 class="fw-bold mb-2 text-white"><i class="fa-solid fa-calculator text-warning me-2"></i>IBC Offshore en Kiribati &ndash; Tarifa Fija con Ventajas Fiscales</h4>
+              <p class="text-white-75 mb-2">
+                La tarifa anual para una Empresa Comercial Internacional de Kiribati es de <strong class="text-warning">$6,000 USD por año</strong> &ndash; un <strong>impuesto fijo</strong> sobre ganancias, sin importar cuánto gane.
+                Eso es efectivamente <strong class="text-warning">$500 USD por mes</strong>, sin importar sus ingresos.
+                <strong>Sin impuesto sobre la renta corporativa, sin impuesto sobre ganancias de capital, sin retenciones fiscales, sin derechos de timbre.</strong>
+              </p>
+              <p class="text-white-75 mb-0 small">
+                <i class="fa-regular fa-calendar me-1"></i> <strong>Prorrateo si abre a mitad de año:</strong> La tarifa siempre vence el <strong>30 de marzo</strong>.
+                Si se incorpora después del 30 de marzo, solo paga por los meses restantes hasta el próximo plazo del 30 de marzo.
+                Ejemplo: Abre en septiembre &rarr; paga por ~7 meses (&asymp; $3,500 USD) hasta el siguiente 30 de marzo.
+              </p>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+              <div class="bg-white bg-opacity-10 rounded-4 p-3 d-inline-block">
+                <div class="fs-1 fw-bold text-warning">$500</div>
+                <div class="small text-white-75">por mes impuesto fijo</div>
+                <hr class="my-2 bg-white bg-opacity-25" />
+                <div class="small text-white-75">Sin impuesto corporativo adicional</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section p-4 p-lg-5 mt-4">
+        <div class="row align-items-center text-center text-md-start">
+          <div class="col-md-8">
+            <h2 class="h3 fw-bold mb-2">¿Listo para registrar su empresa offshore o solicitar una licencia?</h2>
+            <p class="mb-0 text-white-50">Comience con una consulta de 2 minutos. Responderemos con requisitos, plazos y cotización.</p>
+          </div>
+          <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+            <a href="/es/" class="btn btn-light btn-lg fw-semibold px-4">
+              <i class="fa-regular fa-paper-plane me-2"></i> Comenzar ahora
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-4">
+        <div class="text-center mb-4">
+          <h2 class="h3 fw-bold">Preguntas Frecuentes</h2>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Necesito una empresa antes de solicitar una licencia?</strong>
+              <p class="small text-muted mb-0 mt-1">R: Generalmente sí. La mayoría de las licencias KIFA requieren una empresa registrada en Kiribati. Podemos gestionar ambas en paralelo para ahorrar tiempo.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Puedo pagar con criptomonedas?</strong>
+              <p class="small text-muted mb-0 mt-1">R: Sí. Aceptamos BTC, ETH, SOL, USDC y USDT. Se prefieren stablecoins (USDC/USDT) para el pago de tarifas.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Cómo funciona la tarifa anual si abro a mitad de año?</strong>
+              <p class="small text-muted mb-0 mt-1">R: La tarifa se prorratea. Solo paga por los meses restantes hasta el próximo plazo del 30 de marzo. Ejemplo: Abre en septiembre &rarr; paga ~$3,500 USD (7 meses).</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Es la tarifa de $6,000 USD el único impuesto?</strong>
+              <p class="small text-muted mb-0 mt-1">R: Sí. Las IBC de Kiribati pagan una tarifa anual fija de $6,000 USD (=$500/mes) como su única obligación fiscal, independientemente de las ganancias &ndash; sin impuesto sobre la renta corporativa, sin impuesto sobre ganancias de capital, sin retenciones fiscales.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Cuánto tiempo toma obtener la licencia?</strong>
+              <p class="small text-muted mb-0 mt-1">R: Típicamente 4&ndash;8 semanas dependiendo del tipo de licencia y la preparación de la documentación. Aceleramos cuando es posible.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Qué pasa si no pago la tarifa anual a tiempo?</strong>
+              <p class="small text-muted mb-0 mt-1">R: Período de gracia de 30 días, luego disolución automática e inhabilitación del director por 5 años. Gestionamos recordatorios y pagos para evitar esto.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Cuáles son los beneficios fiscales de una empresa offshore en Kiribati?</strong>
+              <p class="small text-muted mb-0 mt-1">R: Las IBC de Kiribati pagan una tarifa anual fija de $6,000 USD. No hay impuesto sobre la renta corporativa sobre ingresos de origen extranjero, cero impuesto sobre ganancias de capital, cero retención fiscal sobre dividendos o intereses a no residentes, y sin derechos de timbre sobre transferencias de acciones.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-card">
+              <strong>P: ¿Cómo abrir una empresa offshore en Kiribati?</strong>
+              <p class="small text-muted mb-0 mt-1">R: Contacte a un Agente Autorizado como Kiribas Agent. Preparamos todos los documentos de incorporación, presentamos ante el registro (kiribas.net) y entregamos su Certificado de Incorporación. El proceso típicamente toma 2&ndash;3 semanas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
+
+    </div>
   </div>
-
-  <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
-
-  <section class="registration-info">
-    <h2>Contacto y Registro</h2>
-    <p><strong>Dirección:</strong> Gerom str, 22108 London (KI)</p>
-    <p><strong>Teléfono:</strong> +37022665869</p>
-    <p class="disclaimer">No es un organismo gubernamental oficial. Solo servicios de Agente Autorizado.</p>
-  </section>
-
-  <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
 </BaseLayout>
-
-<style>
-  .hero-logo {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-  .tagline {
-    font-size: 1.4rem;
-    font-weight: 600;
-    opacity: 1;
-    margin-bottom: 8px;
-  }
-  .registration-info {
-    background: white;
-    border-radius: 8px;
-    padding: 32px;
-    margin-top: 32px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    text-align: center;
-  }
-  .registration-info h2 {
-    margin-bottom: 16px;
-    color: #1a1a2e;
-  }
-  .registration-info p {
-    margin: 6px 0;
-    color: #555;
-  }
-  .registration-info .disclaimer {
-    margin-top: 16px;
-    font-size: 0.85rem;
-    font-style: italic;
-    color: #888;
-  }
-</style>
